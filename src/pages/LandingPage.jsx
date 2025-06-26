@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router";
 // --- ICONS ---
 // A library of SVG icons for a consistent and clean look.
 const Icon = ({ path, className = "w-6 h-6" }) => (
@@ -37,12 +37,18 @@ function LandingPage() {
           <h1 className="text-2xl font-bold text-gray-800">WeiMood</h1>
           <div>
             {/* Buttons are present for UI demonstration but have no actions */}
-            <button className="bg-transparent text-gray-700 font-semibold py-2 px-4 rounded-lg mr-2 hover:bg-gray-100 transition-colors">
+            <Link
+              to="/auth"
+              className="bg-transparent text-gray-700 font-semibold py-2 px-4 rounded-lg mr-2 hover:bg-gray-100 transition-colors"
+            >
               Log In
-            </button>
-            <button className="bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors shadow-md">
+            </Link>
+            <Link
+              to="/dashboard"
+              className="bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors shadow-md"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -207,9 +213,12 @@ function LandingPage() {
             Start your journey towards a more mindful and balanced life. Your
             personalized day awaits.
           </p>
-          <button className="bg-gray-900 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-xl">
+          <Link
+            to="/auth"
+            className="bg-gray-900 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
+          >
             Sign Up for Free
-          </button>
+          </Link>
         </div>
       </section>
 

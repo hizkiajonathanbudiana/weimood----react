@@ -25,12 +25,12 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<Dashboard />} />
       <Route path="/verify" element={<VerifyPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/landing" element={<LandingPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/auth" element={<AuthPage />} />
-      <Route path="/" element={<AuthPage />} />
     </Routes>
   );
 }
