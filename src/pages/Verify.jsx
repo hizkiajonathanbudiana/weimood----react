@@ -69,7 +69,7 @@ function VerifyPage() {
       showToast(successMessage || "Verification successful!", "success");
       const timer = setTimeout(() => {
         dispatch(resetVerifyState());
-        navigate("/login");
+        navigate("/dashboard");
       }, 2000); // Shorten redirect time after toast
       return () => clearTimeout(timer);
     }

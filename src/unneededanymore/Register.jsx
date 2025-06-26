@@ -16,7 +16,7 @@ function Register() {
         password,
       });
       if (response.data.success) {
-        navigate("/login");
+        navigate("/auth");
       } else {
         alert("Successful registration, please login");
       }
