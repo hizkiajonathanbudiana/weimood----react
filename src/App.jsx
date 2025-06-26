@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom"; // <— harus 'react-router-dom'
+import { Routes, Route, useNavigate } from "react-router"; // <— harus 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { clearRedirect } from "./features/app/appSlice";
 import { fetchUser } from "./features/auth/authSlice"; // <— import thunk-nya
