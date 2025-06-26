@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const QUOTE_API_URL = "http://api.quotable.io/quotes/random";
+const QUOTE_API_URL = "https://api.quotable.io/quotes/random";
 
 export const getRandomQuote = async () => {
   try {
