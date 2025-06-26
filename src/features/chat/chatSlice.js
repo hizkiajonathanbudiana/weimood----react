@@ -62,7 +62,7 @@ export const fetchRandomQuote = createAsyncThunk(
   "chat/fetchRandomQuote",
   async (_, { rejectWithValue }) => {
     try {
-      return await getRandomQuote();
+      return await getRandomQuote(); // { content, author }
     } catch (e) {
       return rejectWithValue(e.message);
     }
