@@ -12,7 +12,8 @@ export default function ChartTable() {
     }
   }, [status, dispatch]);
 
-  const moodsObj = moodHistory.length > 0 ? moodHistory[0].moods : {};
+  // Optional chaining + nullish coalescing untuk mencegah error
+  const moodsObj = moodHistory[0]?.moods ?? {};
 
   const moodKeys = [
     "happy",
