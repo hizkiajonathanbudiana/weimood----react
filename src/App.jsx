@@ -39,7 +39,6 @@ export default function App() {
       {user ? (
         // Protected routes
         <>
-          <Route path="/" element={<Dashboard />} />
           <Route path="/verify" element={<VerifyPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/dashboard" element={<Dashboard />} />
