@@ -1,3 +1,11 @@
+import { clearRedirect } from "./features/app/appSlice";
+import { fetchCurrentUser } from "./features/auth/authSlice"; // thunk baru
+import Dashboard from "./pages/Dashboard";
+import VerifyPage from "./pages/Verify";
+import ProfilePage from "./pages/ProfilePage";
+import AuthPage from "./pages/AuthPage";
+import LandingPage from "./pages/LandingPage";
+
 // src/App.jsx
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router"; // <— harus 'react-router-dom'
