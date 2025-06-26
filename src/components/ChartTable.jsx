@@ -1,3 +1,4 @@
+// src/components/ChartTable.jsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllMoods } from "../features/mood/moodSlice";
@@ -12,7 +13,8 @@ export default function ChartTable() {
     }
   }, [status, dispatch]);
 
-  const moodsObj = moodHistory.length > 0 ? moodHistory[0].moods : {};
+  // **Perbaikan utama**: fallback ke objek kosong jika moods null/undefined
+  const moodsObj = moodHistory?.[0]?.moods ?? {};
 
   const moodKeys = [
     "happy",
@@ -60,6 +62,7 @@ export default function ChartTable() {
                     className="text-center p-3 border-t border-gray-200/50"
                   >
                     <span className="font-mono font-bold text-2xl text-purple-700">
+                      {/* Jika moodsObj[key] falsy atau null, tampilkan 0 */}
                       {moodsObj[key] ?? 0}
                     </span>
                   </td>
