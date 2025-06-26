@@ -68,9 +68,12 @@ function LandingPage() {
             Harness the power of AI to understand your emotions and receive
             personalized suggestions that brighten your day, every day.
           </p>
-          <button className="bg-gray-900 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-xl">
+          <Link
+            to="/auth"
+            className="bg-gray-900 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
+          >
             Discover Your Flow
-          </button>
+          </Link>
         </div>
       </section>
 
