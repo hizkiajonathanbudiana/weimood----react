@@ -17,7 +17,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router"; // 1. Import BrowserRouter
+// import { BrowserRouter } from "react-router"; // 1. Import BrowserRouter
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -33,9 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <GoogleOAuthProvider clientId="621781117019-0qtib4f9busqj4khtdnqiso5ec0konoh.apps.googleusercontent.com">
       <Provider store={store}>
         {/* 3. BrowserRouter membungkus App */}
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <App />
       </Provider>
     </GoogleOAuthProvider>
   </React.StrictMode>
