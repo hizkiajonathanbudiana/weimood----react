@@ -12,8 +12,7 @@ export default function ChartTable() {
     }
   }, [status, dispatch]);
 
-  // Ambil objek moods pertama kalau ada, kalau tidak => {}
-  const moodsObj = moodHistory?.[0]?.moods || {};
+  const moodsObj = moodHistory.length > 0 ? moodHistory[0].moods : {};
 
   const moodKeys = [
     "happy",
@@ -61,7 +60,7 @@ export default function ChartTable() {
                     className="text-center p-3 border-t border-gray-200/50"
                   >
                     <span className="font-mono font-bold text-2xl text-purple-700">
-                      {moodsObj?.[key] ?? 0}
+                      {moodsObj[key] ?? 0}
                     </span>
                   </td>
                 ))
