@@ -1,19 +1,17 @@
+// src/App.jsx
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router"; // <-- react-router-dom
+import { useSelector, useDispatch } from "react-redux";
 import { clearRedirect } from "./features/app/appSlice";
-import { fetchCurrentUser } from "./features/auth/authSlice"; // thunk baru
+import { fetchUser } from "./features/auth/authSlice"; // <-- thunk fetchUser
+
 import Dashboard from "./pages/Dashboard";
 import VerifyPage from "./pages/Verify";
 import ProfilePage from "./pages/ProfilePage";
 import AuthPage from "./pages/AuthPage";
 import LandingPage from "./pages/LandingPage";
 
-// src/App.jsx
-import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router"; // <— harus 'react-router-dom'
-import { useSelector, useDispatch } from "react-redux";
-import { clearRedirect } from "./features/app/appSlice";
-import { fetchUser } from "./features/auth/authSlice"; // <— import thunk-nya
-
-function App() {
+export default function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,12 +19,12 @@ function App() {
   const { redirectTo } = useSelector((s) => s.app);
   const user = useSelector((s) => s.auth.user);
 
-  // 🔑 fetch current user sekali pas mount
+  // Fetch current user sekali pas mount
   useEffect(() => {
     dispatch(fetchUser()).finally(() => setLoading(false));
   }, [dispatch]);
 
-  // handle global redirect dari appSlice
+  // Handle global redirects (e.g. ke /auth, /verify, /profile)
   useEffect(() => {
     if (redirectTo) {
       navigate(redirectTo);
@@ -39,7 +37,7 @@ function App() {
   return (
     <Routes>
       {user ? (
-        // protected routes
+        // Protected routes
         <>
           <Route path="/" element={<Dashboard />} />
           <Route path="/verify" element={<VerifyPage />} />
@@ -47,7 +45,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </>
       ) : (
-        // public routes
+        // Public routes
         <>
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<AuthPage />} />
@@ -56,4 +54,3 @@ function App() {
     </Routes>
   );
 }
-export default App;
