@@ -63,6 +63,10 @@ function VerifyPage() {
     (state) => state.verify
   );
 
+  useEffect(() => {
+    dispatch(resendVerificationCode());
+  }, [dispatch]);
+
   // Effect to handle feedback and navigation
   useEffect(() => {
     if (verifyStatus === "succeeded") {
